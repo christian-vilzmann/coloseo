@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 
 export default class Navbar extends Component {
@@ -8,17 +8,23 @@ export default class Navbar extends Component {
       <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
         <Link to="/" className="navbar-brand">COLOSEO</Link>
         <div className="collpase navbar-collapse">
-        <ul className="navbar-nav mr-auto">
-          <li className="navbar-item">
-          <Link to="/" className="nav-link">Projects</Link>
-          </li>
-          <li className="navbar-item">
-          <Link to="/create" className="nav-link">Create Project Log</Link>
-          </li>
-          <li className="navbar-item">
-          <Link to="/user" className="nav-link">Create User</Link>
-          </li>
-        </ul>
+          <ul className="navbar-nav mr-auto">
+            <li className="navbar-item">
+              <Link to="/" className="nav-link">Projects</Link>
+            </li>
+            <li className="navbar-item">
+              <Link to="/createguideline" className="nav-link">New Guideline</Link>
+            </li>
+            <li className="navbar-item">
+              <Link to="/guidelines" className="nav-link">Guidelines</Link>
+            </li>
+            <li className="navbar-item">
+              <Link to="/create" className="nav-link">Create Project Log</Link>
+            </li>
+            <li className="navbar-item">
+              <Link to="/user" className="nav-link">Create User</Link>
+            </li>
+          </ul>
         </div>
       </nav>
     );

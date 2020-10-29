@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 
 export default class Guideline extends Component {
-    render () {
+    render() {
         return (
-        <div>
-            <h1>Guideline component</h1>
-        </div>
+            <div>
+                <h1>Guideline component</h1>
+            </div>
         )
     }
 }
