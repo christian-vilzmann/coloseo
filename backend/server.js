@@ -32,9 +32,11 @@ app.use(cors());
 // Routes //
 const projectsRouter = require('./routes/projects');
 const usersRouter = require('./routes/users');
+const guidelinesRouter = require('./routes/guidelines');
 
 app.use('/projects', projectsRouter);
 app.use('/users', usersRouter);
+app.use('/guidelines', guidelinesRouter);
 
 // Create HTTP Server
 const server = http.createServer(app);
