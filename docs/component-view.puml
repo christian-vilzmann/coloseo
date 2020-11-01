@@ -1,0 +1,13 @@
+@startuml
+
+title "Coloseo - Level 0 Component View " 
+
+component backend 
+note right: Nodejs - Express
+
+
+database "mongoDB"{
+    backend -down-> [schema] 
+}
+
+@enduml
