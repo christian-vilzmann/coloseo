@@ -1,0 +1,26 @@
+@@startuml
+
+    entity Guideline {
+        number: String
+        --
+        name: String 
+        decription: String 
+    }
+    entity Project {
+        
+        --
+        number: String
+        name: String 
+        description: String 
+        type: String
+    }
+    entity User {
+        --
+        username: String 
+        timestamp: String 
+    }
+
+    Project ||..o{ Guideline
+    Project ||..o{ User 
+
+@@enduml

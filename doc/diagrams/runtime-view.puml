@@ -1,0 +1,43 @@
+@@startuml
+
+title Runtime view of COLOSEO 
+
+actor stakeholder 
+box "Coloseo" #LightCoral
+participant "Coloseo FE" as FE 
+participant "Coloseo Server" as BE 
+database "Coloseo DB" as DB 
+end box 
+participant AppIdentifer #LightCoral
+participant Clarity 
+participant SSoT 
+participant 4me
+
+== New Project == 
+
+stakeholder -> FE: Create new project
+activate FE 
+FE -> BE: /projects/add
+BE -> DB: createProject
+DB --> BE: OK 
+BE --> AppIdentifer: UniqueAppID
+BE -> Clarity: /clarity/projects/add 
+activate Clarity
+Clarity -> Clarity: Create Project
+Clarity --> BE: projectId
+deactivate Clarity
+BE -> FE: :200
+FE --> stakeholder: project added! 
+deactivate FE
+BE -> AppIdentifer: projectId
+BE -> SSoT: /application/create 
+activate SSoT 
+SSoT -> SSoT: Create App
+SSoT --> BE: AppId
+deactivate SSoT
+BE -> AppIdentifer: Update App - Add AppId from SSoT
+
+== Update Project ==
+
+
+@@enduml
